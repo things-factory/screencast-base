@@ -1,13 +1,7 @@
-import {
-  ADD_SCREENCAST_SERVICES,
-  CHANGE_SCREENCAST_SERVICES,
-  REMOVE_SCREENCAST_SERVICES,
-  UPDATE_CURRENT_SCREENCAST_SERVICE
-} from '../actions/screencast'
+import { ADD_SCREENCAST_SERVICES, CHANGE_SCREENCAST_SERVICES, REMOVE_SCREENCAST_SERVICES } from '../actions/screencast'
 
 const INITIAL_STATE = {
-  services: [],
-  currentService: null
+  services: []
 }
 
 const screencast = (state = INITIAL_STATE, action) => {
@@ -32,12 +26,6 @@ const screencast = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         services: [...state.services.filter(s => s.name == action.service.name)]
-      }
-
-    case UPDATE_CURRENT_SCREENCAST_SERVICE:
-      return {
-        ...state,
-        currentService: action.service
       }
 
     default:
