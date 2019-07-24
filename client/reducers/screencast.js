@@ -7,7 +7,7 @@ import {
 
 const INITIAL_STATE = {
   services: [],
-  currentService: {}
+  currentService: null
 }
 
 const screencast = (state = INITIAL_STATE, action) => {
