@@ -1,4 +1,4 @@
-import { ADD_SCREENCAST_SERVICES, CHANGE_SCREENCAST_SERVICES, REMOVE_SCREENCAST_SERVICES } from '../actions/screencast'
+import { UPDATE_SCREENCAST_SERVICES } from '../actions/screencast'
 
 const INITIAL_STATE = {
   services: []
@@ -6,26 +6,10 @@ const INITIAL_STATE = {
 
 const screencast = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case ADD_SCREENCAST_SERVICES:
-      var services = [...state.services].concat(
-        state.services.find(s => s.name == action.service.name) ? [] : action.service
-      )
-
+    case UPDATE_SCREENCAST_SERVICES:
       return {
         ...state,
-        services
-      }
-
-    case CHANGE_SCREENCAST_SERVICES:
-      var filtered = state.services.filter(s => s.name != action.service.name)
-      return {
-        ...state,
-        services: [...filtered, action.service]
-      }
-    case REMOVE_SCREENCAST_SERVICES:
-      return {
-        ...state,
-        services: [...state.services.filter(s => s.name == action.service.name)]
+        services: [...action.services]
       }
 
     default:
