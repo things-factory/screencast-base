@@ -23,6 +23,7 @@
     "migration:revert": "node ./node_modules/typeorm/cli.js migration:revert"
   },
   "dependencies": {
+    "@things-factory/screencast-proxy-service": "*",
     "@things-factory/shell": "*"
   },
   "devDependencies": {}
